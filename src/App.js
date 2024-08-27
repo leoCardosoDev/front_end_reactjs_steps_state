@@ -7,7 +7,7 @@ const messages = [
 ];
 
 export default function App() {
-  let [step, setStep] = useState(1);
+  const [step, setStep] = useState(1);
   const styleBg = { backgroundColor: '#7950f2', color: '#fff' };
 
   function handlePrevious() {
