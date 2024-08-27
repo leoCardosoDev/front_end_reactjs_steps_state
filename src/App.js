@@ -12,16 +12,19 @@ export default function App() {
   const styleBg = { backgroundColor: '#7950f2', color: '#fff' };
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((currentStep) => currentStep - 1);
   }
 
   function handleNext() {
-    if (step < messages.length) setStep(step + 1);
+    if (step < messages.length) setStep((currentStep) => currentStep + 1);
   }
 
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className="close"
+        onClick={() => setIsOpen((currentState) => !currentState)}
+      >
         <span
           dangerouslySetInnerHTML={{ __html: isOpen ? '&times;' : '&#9654;' }}
         />
